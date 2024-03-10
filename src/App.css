@@ -44,3 +44,19 @@ z-index: 2;
   color: #fff;
 
 }
+
+.Progress-bar{
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  left: 0;
+  height: 4px;
+  background-color: #ccc;
+
+}
+
+.progress {
+  height: 100%;
+  background-color: #28a745;
+  transition: 0.2s ease;
+}

@@ -27,7 +27,9 @@ const handleNext=()=>{
 }
 
 const ActiveComponent=  stepsConfig[currentStep-1]?.Component;
-
+  const calculateProgressBarWidth = () => {
+    return ((currentStep - 1) / (stepsConfig.length - 1)) * 100;
+  };
 return(
     <>
     <div className="stepper">  {
@@ -44,10 +46,15 @@ return(
         })
     
     }
-
+ <div className="Progress-bar"  
+          >
+        <div className="progress"  style={{width: `${calculateProgressBarWidth()}%`}}></div>
+            
+        </div>
     </div>
 
    
+      
     <ActiveComponent/>;
   {!isComplete &&  <button onClick={handleNext}>{currentStep==stepsConfig.length?"finish" :"next"}</button> }
     </>
